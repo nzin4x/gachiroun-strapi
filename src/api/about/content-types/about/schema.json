@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "About",
+    "displayName": "about",
     "description": "Write about yourself and the content you create"
   },
   "options": {
@@ -15,9 +15,14 @@
     "title": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "body": {
+      "type": "blocks"
+    },
+    "greeting": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.greeting",
+      "required": false
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_greetings",
+  "info": {
+    "displayName": "Greeting",
+    "icon": "smile",
+    "description": "인삿말 컴포넌트"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "blocks",
+      "required": true
+    },
+    "writtenby": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
