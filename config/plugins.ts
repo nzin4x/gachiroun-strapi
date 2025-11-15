@@ -4,4 +4,7 @@ export default () => ({
 			introspection: true,
 		},
 	},
+	documentation: {
+		enabled: true,
+	},
 });
