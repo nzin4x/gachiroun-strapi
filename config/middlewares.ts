@@ -5,7 +5,7 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
+
       origin: [
         'https://gachiroun.or.kr',
         'https://www.gachiroun.or.kr'
