@@ -697,6 +697,39 @@ export interface ApiNoticeNotice extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPopupPopup extends Struct.CollectionTypeSchema {
+  collectionName: 'popups';
+  info: {
+    description: '\uAE30\uAC04 \uD55C\uC815 \uD31D\uC5C5 \uACF5\uC9C0';
+    displayName: '\uD31D\uC5C5\uACF5\uC9C0';
+    pluralName: 'popups';
+    singularName: 'popup';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    endsAt: Schema.Attribute.DateTime;
+    link: Schema.Attribute.String;
+    linkText: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::popup.popup'> &
+      Schema.Attribute.Private;
+    photo: Schema.Attribute.Media;
+    publishedAt: Schema.Attribute.DateTime;
+    show: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    startsAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1215,6 +1248,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::history.history': ApiHistoryHistory;
       'api::notice.notice': ApiNoticeNotice;
+      'api::popup.popup': ApiPopupPopup;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
